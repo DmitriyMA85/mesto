@@ -1,0 +1,12 @@
+.gallery__cards {
+    width: 68.75vw;
+    min-width: 282px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 282px);
+    margin-top: 36px;
+    padding-left: 0;
+    justify-content: center;
+    row-gap: 20px;
+    column-gap: 17px;
+    overflow: hidden;
+}

@@ -1,0 +1,9 @@
+.gallery__text {
+    display: flex;
+    flex-direction: row;
+    margin: 25px 15px 31px 21px;
+    width: 246px;
+    min-height: 23px;
+    align-items: baseline;
+    justify-content: space-between;
+}

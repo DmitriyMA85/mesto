@@ -1,16 +1,91 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mesto</title>
-    <link  rel ="stylesheet" href="./pages/index.css">
+    <link rel="stylesheet" href="./pages/index.css">
 </head>
+
 <body class="page">
     <header class="header">
         <img class="header__logo" src="./images/Vector.svg" alt="Логотип Место Россия">
     </header>
-   <script src="./scripts/index.js" defer></script> 
+    <main>
+        <section class="profile">
+            <div class="profile__avatar">
+                <img class="profile__photo" src="./images/Avatar.png">
+            </div>
+            <div class="profile__info">
+                <div class="profile__popup">
+                    <div class="profile__card">
+                        <h1 class="profile__name">Жак-Ив Кусто</h1>
+                        <img class="profile__button-edit" src="./images/Edit-Button.svg"
+                            alt="Иконка для редактирования профиля">
+                    </div>
+                    <p class="profile__text">Исследователь океана</p>
+                </div>
+                <button class="button-add"><img class="button-add__image" src="./images/Button-add.svg"
+                        alt="Иконка для добавления профиля"></button>
+            </div>
+        </section>
+        <section class="gallery" aria-label="Галерея картинок">
+            <ul class="gallery__cards">
+                <li class="gallery__card">
+                    <img class="gallery__image" src="./images/kirill-pershin-1088404-unsplash.jpg"
+                        alt="Фото старинной церкви">
+                    <div class="gallery__text">
+                        <h2 class="gallery__heading">Карачаевск</h2>
+                        <img class="gallery__like" src="./images/Vector-heart.svg" alt="Иконка сердечка">
+                    </div>
+                </li>
+                <li class="gallery__card">
+                    <img class="gallery__image" src="./images/kirill-pershin-1404681-unsplash.jpg"
+                        alt="Фото горы на фоне заката">
+                    <div class="gallery__text">
+                        <h2 class="gallery__heading">Гора Эльбрус</h2>
+                        <img class="gallery__like" src="./images/Vector-heart.svg" alt="Иконка сердечка">
+                    </div>
+                </li>
+                <li class="gallery__card">
+                    <img class="gallery__image" src="./images/kirill-pershin-1556355-unsplash.jpg"
+                        alt="Фото пика горы на фоне леса">
+                    <div class="gallery__text">
+                        <h2 class="gallery__heading">Домбай</h2>
+                        <img class="gallery__like" src="./images/Vector-heart.svg" alt="Иконка сердечка">
+                    </div>
+                </li>
+                <li class="gallery__card">
+                    <img class="gallery__image" src="./images/kirill-pershin-1404681-unsplash.jpg"
+                        alt="Фото горы на фоне заката">
+                    <div class="gallery__text">
+                        <h2 class="gallery__heading">Гора Эльбрус</h2>
+                        <img class="gallery__like" src="./images/Vector-heart.svg" alt="Иконка сердечка">
+                    </div>
+                </li>
+                <li class="gallery__card">
+                    <img class="gallery__image" src="./images/kirill-pershin-1556355-unsplash.jpg"
+                        alt="Фото пика горы на фоне леса">
+                    <div class="gallery__text">
+                        <h2 class="gallery__heading">Домбай</h2>
+                        <img class="gallery__like" src="./images/Vector-heart.svg" alt="Иконка сердечка">
+                    </div>
+                </li>
+                <li class="gallery__card">
+                    <img class="gallery__image" src="./images/kirill-pershin-1088404-unsplash.jpg"
+                        alt="Фото старинной церкви">
+                    <div class="gallery__text">
+                        <h2 class="gallery__heading">Карачаево-Чепецк</h2>
+                        <img class="gallery__like" src="./images/Vector-heart.svg" alt="Иконка сердечка">
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer"></footer>
+    <script src="./scripts/index.js" defer></script>
 </body>
+
 </html>

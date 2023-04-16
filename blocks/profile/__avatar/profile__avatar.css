@@ -1,0 +1,13 @@
+.profile__avatar {
+    width: 168.75px;
+    height: 127.5px;
+    margin-top: 38.25px;
+    margin-bottom: 22.25px;
+}
+
+@media (min-width:1280px) {
+    .profile__avatar {
+        margin-left: -24.375px;
+        margin-top: 36.25px;
+    }
+}
