@@ -1,0 +1,22 @@
+.footer {
+    min-width: 282px;
+    min-height: 14px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #545454;
+    margin: 48px 19px 36px 19px;
+}
+
+@media (min-width:1280px) {
+    .footer {
+        min-width: 318px;
+        margin-left: 0;
+        min-height: 18px;
+        font-size: 18px;
+        line-height: 22px;
+        margin: 67px 762px 60px 200px;
+    }
+}

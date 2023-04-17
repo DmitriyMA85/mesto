@@ -16,7 +16,8 @@
     <main>
         <section class="profile">
             <div class="profile__avatar">
-                <img class="profile__photo" src="./images/Avatar.png">
+                <img class="profile__photo" src="./images/Avatar.png"
+                    alt="Фото улыбающего пожилого мужчины на фоне моря">
             </div>
             <div class="profile__info">
                 <div class="profile__popup">
@@ -27,10 +28,21 @@
                     </div>
                     <p class="profile__text">Исследователь океана</p>
                 </div>
-                <button class="button-add"><img class="button-add__image" src="./images/Button-add.svg"
+                <button type="button" class="button-add"><img class="button-add__image" src="./images/Button-add.svg"
                         alt="Иконка для добавления профиля"></button>
             </div>
         </section>
+        <div class="popup popup_is-opened">
+            <div class="popup__form">
+                <img class="popup__button-close" src="./images/Close-Icon.png" alt="Инонка крестик для закрытия окна редактирования профиля">
+                <div class="popup__container">
+                    <h2 class="popup__heading">Редактировать профиль</h2>
+                    <input class="popup__data-name" type="text" value="Жак-Ив Кусто">
+                    <input class="popup__data-profession" type="text" value="Исследователь океана">
+                    <button class="popup__safe" type="button">Сохранить</button>
+                </div>
+            </div>
+        </div>
         <section class="gallery" aria-label="Галерея картинок">
             <ul class="gallery__cards">
                 <li class="gallery__card">
@@ -84,7 +96,9 @@
             </ul>
         </section>
     </main>
-    <footer class="footer"></footer>
+    <footer>
+        <p class="footer">&#169; 2023 Mesto Russia</p>
+    </footer>
     <script src="./scripts/index.js" defer></script>
 </body>
 

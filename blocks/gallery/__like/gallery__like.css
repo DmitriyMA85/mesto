@@ -3,3 +3,7 @@
     height: 19px;
     margin-right: 5px;
 }
+
+.gallery__like:hover {
+    opacity: .5;
+}
