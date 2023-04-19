@@ -24,3 +24,10 @@ function handleFormSubmit(evt) {
 formElement.addEventListener('submit', handleFormSubmit);
 popupSafeButtonElement.addEventListener('click', handleFormSubmit);
 popupSafeButtonElement.addEventListener('click', togglePopupVisibility);
+formElement.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+        togglePopupVisibility();
+        profileName.textContent = nameInput.value;
+        profileJob.textContent = jobInput.value;
+    }
+});
