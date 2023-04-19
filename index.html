@@ -26,19 +26,19 @@
                         <img class="profile__button-edit" src="./images/Edit-Button.svg"
                             alt="Иконка для редактирования профиля">
                     </div>
-                    <p class="profile__text">Исследователь океана</p>
+                    <p class="profile__job">Исследователь океана</p>
                 </div>
                 <button type="button" class="button-add"><img class="button-add__image" src="./images/Button-add.svg"
                         alt="Иконка для добавления профиля"></button>
             </div>
         </section>
-        <div class="popup popup_is-opened">
+        <div class="popup">
             <div class="popup__form">
-                <img class="popup__button-close" src="./images/Close-Icon.png" alt="Инонка крестик для закрытия окна редактирования профиля">
+                <img class="popup__close" src="./images/Close-Icon.png" alt="Инонка крестик для закрытия окна редактирования профиля">
                 <div class="popup__container">
                     <h2 class="popup__heading">Редактировать профиль</h2>
-                    <input class="popup__data-name" type="text" value="Жак-Ив Кусто">
-                    <input class="popup__data-profession" type="text" value="Исследователь океана">
+                    <input class="popup__data-name" type="text" name="profile-name" value="Жак-Ив Кусто">
+                    <input class="popup__data-profession" type="text" name="profile-job" value="Исследователь океана">
                     <button class="popup__safe" type="button">Сохранить</button>
                 </div>
             </div>
@@ -50,7 +50,7 @@
                         alt="Фото старинной церкви">
                     <div class="gallery__text">
                         <h2 class="gallery__heading">Карачаевск</h2>
-                        <img class="gallery__like" src="./images/Vector-heart.svg" alt="Иконка сердечка">
+                        <button type="button" class="gallery__like"></button>
                     </div>
                 </li>
                 <li class="gallery__card">
@@ -58,7 +58,7 @@
                         alt="Фото горы на фоне заката">
                     <div class="gallery__text">
                         <h2 class="gallery__heading">Гора Эльбрус</h2>
-                        <img class="gallery__like" src="./images/Vector-heart.svg" alt="Иконка сердечка">
+                        <button type="button" class="gallery__like"></button>
                     </div>
                 </li>
                 <li class="gallery__card">
@@ -66,7 +66,7 @@
                         alt="Фото пика горы на фоне леса">
                     <div class="gallery__text">
                         <h2 class="gallery__heading">Домбай</h2>
-                        <img class="gallery__like" src="./images/Vector-heart.svg" alt="Иконка сердечка">
+                        <button type="button" class="gallery__like"></button>
                     </div>
                 </li>
                 <li class="gallery__card">
@@ -74,7 +74,7 @@
                         alt="Фото горы на фоне заката">
                     <div class="gallery__text">
                         <h2 class="gallery__heading">Гора Эльбрус</h2>
-                        <img class="gallery__like" src="./images/Vector-heart.svg" alt="Иконка сердечка">
+                        <button type="button" class="gallery__like"></button>
                     </div>
                 </li>
                 <li class="gallery__card">
@@ -82,22 +82,22 @@
                         alt="Фото пика горы на фоне леса">
                     <div class="gallery__text">
                         <h2 class="gallery__heading">Домбай</h2>
-                        <img class="gallery__like" src="./images/Vector-heart.svg" alt="Иконка сердечка">
+                        <button type="button" class="gallery__like"></button>
                     </div>
                 </li>
                 <li class="gallery__card">
                     <img class="gallery__image" src="./images/kirill-pershin-1088404-unsplash.jpg"
                         alt="Фото старинной церкви">
                     <div class="gallery__text">
-                        <h2 class="gallery__heading">Карачаево-Чепецк</h2>
-                        <img class="gallery__like" src="./images/Vector-heart.svg" alt="Иконка сердечка">
+                        <h2 class="gallery__heading">Карачаево-Черкесия</h2>
+                        <button type="button" class="gallery__like"></button>
                     </div>
                 </li>
             </ul>
         </section>
     </main>
-    <footer>
-        <p class="footer">&#169; 2023 Mesto Russia</p>
+    <footer class="footer">
+        <p class="footer__text">&#169; 2023 Mesto Russia</p>
     </footer>
     <script src="./scripts/index.js" defer></script>
 </body>

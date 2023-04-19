@@ -1,17 +1,17 @@
-.popup__button-close {
+.popup__close {
     display: flex;
     height: 20px;
     width: 20px;
     justify-self: right;
 }
 
-.popup__button-close:hover {
+.popup__close:hover {
     opacity: .6;
 }
 
 @media (min-width:1280px) {
-    .popup__button-close {
+    .popup__close {
         width: 32px;
-        height: 32px; 
+        height: 32px;
     }
 }
