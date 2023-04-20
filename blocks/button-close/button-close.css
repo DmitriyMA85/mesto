@@ -1,0 +1,12 @@
+.button-close {
+    display: flex;
+    justify-self: right;
+    cursor: pointer;
+    padding: 0;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.button-close:hover {
+    opacity: .6;
+}

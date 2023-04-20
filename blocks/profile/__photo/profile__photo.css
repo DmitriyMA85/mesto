@@ -1,5 +1,13 @@
 .profile__photo {
-    margin: 3.75px 26.25px 3.75px 22.5px;
+    margin-top:3.75px;
+    margin-left: 22.5px;
     width: 120px;
     height: 120px;
+    border-radius: 50%;
+}
+
+@media(min-width:1280px) {
+    .profile__photo {
+        margin-left: 0;
+    }
 }

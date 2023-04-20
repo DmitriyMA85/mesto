@@ -1,0 +1,13 @@
+.popup__menu {
+    display: grid;
+    flex-direction: column;
+    width: 282px;
+    row-gap: 16px;
+}
+
+@media (min-width:1280px) {
+    .popup__menu {
+        width: 470px;
+        row-gap: 8px;
+    }
+}

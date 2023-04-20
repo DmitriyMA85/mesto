@@ -1,17 +1,5 @@
 .popup__form {
-    display: grid;
-    row-gap: 16px;
+    display: flex;
     flex-direction: column;
-    position: absolute;
-    width: 282px;
-    height: 358px;
-    top: 87px;
-}
-
-@media (min-width:1280px) {
-    .popup__form {
-        width: 470px;
-        height: 370px;
-        row-gap: 8px;
-    }
+    align-items: center;
 }

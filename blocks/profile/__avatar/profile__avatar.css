@@ -7,7 +7,6 @@
 
 @media (min-width:1280px) {
     .profile__avatar {
-        margin-left: -24.375px;
         margin-top: 36.25px;
     }
 }

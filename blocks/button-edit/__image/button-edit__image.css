@@ -1,0 +1,11 @@
+.button-edit__image{
+    width: 18px;
+    height: 18px;
+}
+
+@media(min-width:1280px) {
+    .button-edit__image {
+        width: 24px;
+        height: 24px;
+    }
+}

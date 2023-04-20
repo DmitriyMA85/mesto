@@ -23,8 +23,9 @@
                 <div class="profile__popup">
                     <div class="profile__card">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <img class="profile__button-edit" src="./images/Edit-Button.svg"
-                            alt="Иконка для редактирования профиля">
+                        <button type="button" class="button-edit" aria-label="Кнопка для редактирования профиля"><img
+                                class="button-edit__image" src="./images/Edit-Button.svg"
+                                alt="Иконка для редактирования профиля"></button>
                     </div>
                     <p class="profile__job">Исследователь океана</p>
                 </div>
@@ -33,13 +34,20 @@
             </div>
         </section>
         <div class="popup">
-            <div class="popup__form">
-                <img class="popup__close" src="./images/Close-Icon.png" alt="Инонка крестик для закрытия окна редактирования профиля">
+            <div class="popup__menu">
+                <button class="button-close" type="button"
+                    aria-label="Инонка крестик для закрытия окна редактирования профиля"><img
+                        class="button-close__image" src="./images/Close-Icon.svg"
+                        alt="Инонка крестик для закрытия окна редактирования профиля"></button>
                 <div class="popup__container">
                     <h2 class="popup__heading">Редактировать профиль</h2>
-                    <input class="popup__data-name" type="text" name="profile-name" value="Жак-Ив Кусто">
-                    <input class="popup__data-profession" type="text" name="profile-job" value="Исследователь океана">
-                    <button class="popup__safe" type="button">Сохранить</button>
+                    <form class="popup__form" name="form-profile">
+                        <input class="popup__input popup__input_data_name" type="text" name="profile-name"
+                            value="Жак-Ив Кусто">
+                        <input class="popup__input popup__input_data_job" type="text" name="profile-job"
+                            value="Исследователь океана">
+                        <button class="popup__safe" type="submit">Сохранить</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -1,0 +1,11 @@
+.button-close__image {
+    height: 20px;
+    width: 20px;
+}
+
+@media (min-width:1280px) {
+    .button-close__image {
+        width: 32px;
+        height: 32px;
+    }
+}

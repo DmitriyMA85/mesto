@@ -1,6 +1,5 @@
 .profile__job {
-    min-width: 282px;
-    min-height: 14px;
+    width: 282px;
     font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -17,8 +16,11 @@
 
 @media (min-width:1280px) {
     .profile__job {
+        max-width: 336px;
         margin-top: 16px;
         margin-bottom: 0;
         text-align: left;
+        font-size: 18px;
+        line-height: 22px;
     }
 }

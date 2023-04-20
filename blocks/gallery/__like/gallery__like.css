@@ -3,7 +3,7 @@
     height: 19px;
     margin-right: 5px;
     border: none;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgba(255, 255, 255, 0);
     background-image: url(../../../images/Vector-heart.svg);
     background-repeat: no-repeat;
 }
