@@ -11,11 +11,11 @@ let nameInput = formElement.querySelector('.popup__input_data_name');
 let jobInput = formElement.querySelector('.popup__input_data_job');
 let profileName = document.querySelector('.profile__name');
 let profileJob = document.querySelector('.profile__job');
-const addinputdata = function () {
-    nameInput.value.textContent=profileName;
+const addInputData = function () {
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileJob.textContent;
 }
-addinputdata ();
-console.log(nameInput);
+popupOpenButtonElement.addEventListener('click', addInputData);
 function handleFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
