@@ -1,7 +1,6 @@
 .gallery__cards {
-    width: 68.75vw;
-    min-width: 282px;
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(auto-fill, 282px);
     margin-top: 36px;
     margin-bottom: 0;

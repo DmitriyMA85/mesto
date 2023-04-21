@@ -1,10 +1,10 @@
-.button-edit__image{
+.profile__button-edit-icon{
     width: 18px;
     height: 18px;
 }
 
 @media(min-width:1280px) {
-    .button-edit__image {
+    .profile__button-edit-icon {
         width: 24px;
         height: 24px;
     }

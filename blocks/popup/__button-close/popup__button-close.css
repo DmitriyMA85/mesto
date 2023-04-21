@@ -1,4 +1,4 @@
-.button-close {
+.popup__button-close {
     display: flex;
     justify-self: right;
     cursor: pointer;
@@ -7,6 +7,6 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
-.button-close:hover {
+.popup__button-close:hover {
     opacity: .6;
 }
