@@ -23,17 +23,17 @@
                 <div class="profile__popup">
                     <div class="profile__card">
                         <h1 class="profile__name">Жак-Ив Кусто</h1>
-                        <button type="button" class="profile__button-edit" aria-label="Кнопка для редактирования профиля"><img
-                                class="profile__button-edit-icon" src="./images/Edit-Button.svg"
-                                alt="Иконка для редактирования профиля"></button>
+                        <button type="button" class="profile__button-edit"
+                            aria-label="Кнопка для редактирования профиля"><img class="profile__button-edit-icon"
+                                src="./images/Edit-Button.svg" alt="Иконка для редактирования профиля"></button>
                     </div>
                     <p class="profile__job">Исследователь океана</p>
                 </div>
-                <button type="button" class="profile__button-add"><img class="profile__button-add-icon" src="./images/Button-add.svg"
-                        alt="Иконка для добавления профиля"></button>
+                <button type="button" class="profile__button-add"><img class="profile__button-add-icon"
+                        src="./images/Button-add.svg" alt="Иконка для добавления профиля"></button>
             </div>
         </section>
-        <div class="popup">
+        <div class="popup popup_type_edit">
             <div class="popup__menu">
                 <button class="popup__button-close" type="button"
                     aria-label="Инонка крестик для закрытия окна редактирования профиля"><img
@@ -51,9 +51,40 @@
                 </div>
             </div>
         </div>
+        <div class="popup popup_type_new-card">
+            <div class="popup__menu">
+                <button class="popup__button-close" type="button"
+                    aria-label="Инонка крестик для закрытия окна добавления новой карточки"><img
+                        class="popup__button-close-icon" src="./images/Close-Icon.svg"
+                        alt="Инонка крестик для закрытия окна добавления новой карточки"></button>
+                <div class="popup__container">
+                    <h2 class="popup__heading">Новое место</h2>
+                    <form class="popup__form" name="form-new-place">
+                        <input class="popup__input popup__input_data_place" type="text" name="place-name"
+                            placeholder="Название">
+                        <input class="popup__input popup__input_data_link" type="url" name="place-link"
+                            placeholder="Ссылка на картинку">
+                        <button class="popup__safe" type="submit">Создать</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="popup popup_type_image">
+            <div class="popup__menu-image">
+                <button class="popup__button-close" type="button"
+                    aria-label="Инонка крестик для закрытия окна добавления новой карточки"><img
+                        class="popup__button-close-icon" src="./images/Close-Icon.svg"
+                        alt="Инонка крестик для закрытия окна добавления новой карточки"></button>
+                <figure class="popup__figure">
+                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="popup__image">
+                    <figcaption class="popup__caption">Карачаевск</figcaption>
+                </figure>
+            </div>
+        </div>
         <section class="gallery" aria-label="Галерея картинок">
             <ul class="gallery__cards">
                 <li class="gallery__card">
+                    <button type="button" class="gallery__delete"></button>
                     <img class="gallery__image" src="./images/kirill-pershin-1088404-unsplash.jpg"
                         alt="Фото старинной церкви">
                     <div class="gallery__text">
@@ -62,6 +93,7 @@
                     </div>
                 </li>
                 <li class="gallery__card">
+                    <button type="button" class="gallery__delete"></button>
                     <img class="gallery__image" src="./images/kirill-pershin-1404681-unsplash.jpg"
                         alt="Фото горы на фоне заката">
                     <div class="gallery__text">
@@ -70,6 +102,7 @@
                     </div>
                 </li>
                 <li class="gallery__card">
+                    <button type="button" class="gallery__delete"></button>
                     <img class="gallery__image" src="./images/kirill-pershin-1556355-unsplash.jpg"
                         alt="Фото пика горы на фоне леса">
                     <div class="gallery__text">
@@ -78,6 +111,7 @@
                     </div>
                 </li>
                 <li class="gallery__card">
+                    <button type="button" class="gallery__delete"></button>
                     <img class="gallery__image" src="./images/kirill-pershin-1404681-unsplash.jpg"
                         alt="Фото горы на фоне заката">
                     <div class="gallery__text">
@@ -86,6 +120,7 @@
                     </div>
                 </li>
                 <li class="gallery__card">
+                    <button type="button" class="gallery__delete"></button>
                     <img class="gallery__image" src="./images/kirill-pershin-1556355-unsplash.jpg"
                         alt="Фото пика горы на фоне леса">
                     <div class="gallery__text">
@@ -94,6 +129,7 @@
                     </div>
                 </li>
                 <li class="gallery__card">
+                    <button type="button" class="gallery__delete"></button>
                     <img class="gallery__image" src="./images/kirill-pershin-1088404-unsplash.jpg"
                         alt="Фото старинной церкви">
                     <div class="gallery__text">

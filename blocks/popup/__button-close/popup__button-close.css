@@ -10,3 +10,9 @@
 .popup__button-close:hover {
     opacity: .6;
 }
+
+@media(min-width:1280px) {
+    .popup__button-close {
+        grid-area: button;
+    }
+}

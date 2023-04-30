@@ -28,3 +28,7 @@
         width: 358px;
     }
 }
+
+::placeholder {
+    color: rgba(196, 196, 196, 1);
+}
