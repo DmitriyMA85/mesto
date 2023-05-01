@@ -25,28 +25,42 @@ const initialCards = [
     }
 ];
 const GalleryCards = document.querySelector('.gallery__cards');
-initialCards.forEach((cardName) => {
-    const li = document.createElement('li');
-    li.classList.add('gallery__card');
-    const buttonDelete = document.createElement('button');
-    buttonDelete.type = 'button';
-    buttonDelete.classList.add('gallery__delete');
-    const img = document.createElement('img');
-    img.classList.add('gallery__image');
-    img.setAttribute('src',cardName.link);
-    img.alt = 'Изображение местности';
-    const div = document.createElement('div');
-    div.classList.add('gallery__text');
-    const heading = document.createElement('h2');
-    heading.classList.add('gallery__heading');
-    heading.textContent = cardName.name;
-    const buttonLike = document.createElement('button');
-    buttonLike.type= 'button';
-    buttonLike.classList.add('gallery__like');
-    div.append(heading,buttonLike);
-    li.append(buttonDelete,img,div);
-    GalleryCards.append(li);
-})
+const createGallery = (cardName) => {
+    const string = `<li class="gallery__card">
+    <button type="button" class="gallery__delete"></button>
+    <img class="gallery__image" src=${cardName.link}
+        alt="Изображение местности">
+    <div class="gallery__text">
+        <h2 class="gallery__heading">${cardName.name}</h2>
+        <button type="button" class="gallery__like"></button>
+    </div>
+</li>`;
+    const tempGalleryCard = document.createElement('div');
+    tempGalleryCard.insertAdjacentHTML('afterbegin', string);
+    const li = tempGalleryCard.firstElementChild;
+    return li;
+};
+const liList = initialCards.map((cardName) => {
+    const cardElement = createGallery(cardName);
+    return cardElement;
+});
+const renderGallery = (cardName) => {
+    GalleryCards.prepend(createGallery(cardName));
+};
+GalleryCards.append(...liList);
+let FormAddCardElement = document.querySelector("form[name='form-new-place']");
+let placeInput = FormAddCardElement.querySelector('.popup__input_data_place');
+let linkInput = FormAddCardElement.querySelector('.popup__input_data_link');
+const submitFormHandler = (event) => {
+    event.preventDefault();
+    const cardName = {
+       name: placeInput.value,
+       link: linkInput.value
+    };
+    renderGallery(cardName);
+    togglePopupNewCardVisibility();
+};
+FormAddCardElement.addEventListener('submit', submitFormHandler);
 const popupList = document.querySelectorAll('.popup');
 const popupEditElement = document.querySelector('.popup_type_edit');
 const popupNewCardElement = document.querySelector('.popup_type_new-card');
@@ -81,7 +95,7 @@ popupCloseButtonList.forEach(function (popupCloseButtonElement) {
     });
 });
 popupOpenButtonAddElement.addEventListener('click', togglePopupNewCardVisibility);
-let formElement = document.querySelector('.popup__form');
+let formElement = document.querySelector("form[name='form-profile']");
 let nameInput = formElement.querySelector('.popup__input_data_name');
 let jobInput = formElement.querySelector('.popup__input_data_job');
 let profileName = document.querySelector('.profile__name');
