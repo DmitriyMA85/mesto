@@ -24,6 +24,29 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
+const GalleryCards = document.querySelector('.gallery__cards');
+initialCards.forEach((cardName) => {
+    const li = document.createElement('li');
+    li.classList.add('gallery__card');
+    const buttonDelete = document.createElement('button');
+    buttonDelete.type = 'button';
+    buttonDelete.classList.add('gallery__delete');
+    const img = document.createElement('img');
+    img.classList.add('gallery__image');
+    img.setAttribute('src',cardName.link);
+    img.alt = 'Изображение местности';
+    const div = document.createElement('div');
+    div.classList.add('gallery__text');
+    const heading = document.createElement('h2');
+    heading.classList.add('gallery__heading');
+    heading.textContent = cardName.name;
+    const buttonLike = document.createElement('button');
+    buttonLike.type= 'button';
+    buttonLike.classList.add('gallery__like');
+    div.append(heading,buttonLike);
+    li.append(buttonDelete,img,div);
+    GalleryCards.append(li);
+})
 const popupList = document.querySelectorAll('.popup');
 const popupEditElement = document.querySelector('.popup_type_edit');
 const popupNewCardElement = document.querySelector('.popup_type_new-card');
@@ -32,17 +55,24 @@ const popupCloseButtonList = document.querySelectorAll('.popup__button-close');
 const popupOpenButtonEditElement = document.querySelector('.profile__button-edit');
 const popupOpenButtonAddElement = document.querySelector('.profile__button-add');
 const galleryLikeLists = document.querySelectorAll('.gallery__like');
-const popupOpenButtonImageElement = document.querySelector('.gallery__image');
+const popupOpenButtonImageList = document.querySelectorAll('.gallery__image');
 const togglePopupEditVisibility = function () {
     popupEditElement.classList.toggle('popup_opened');
 };
 const togglePopupNewCardVisibility = function () {
     popupNewCardElement.classList.toggle('popup_opened');
 };
-const togglePopupImageVisibility = function () {
+const addPopupImageVisibility = function () {
     popupImageElement.classList.toggle('popup_opened');
 };
-popupOpenButtonImageElement.addEventListener('click', togglePopupImageVisibility);
+let popupCaption = popupImageElement.querySelector('.popup__caption');
+popupOpenButtonImageList.forEach(function (popupOpenButtonImageElement) {
+    popupOpenButtonImageElement.addEventListener('click', (event) => {
+        let placeHeading = event.target.closest('.gallery__card');
+        popupCaption.textContent = placeHeading.textContent;
+        addPopupImageVisibility();
+    });
+});
 popupCloseButtonList.forEach(function (popupCloseButtonElement) {
     popupCloseButtonElement.addEventListener('click', () => {
         popupList.forEach(function (popup) {
