@@ -28,10 +28,14 @@ const GalleryCards = document.querySelector('.gallery__cards');
 const template = document.querySelector('.template');
 const createGallery = (cardName) => {
     const li = template.content.querySelector('.gallery__card').cloneNode(true);
-    li.querySelector('.gallery__heading').textContent=cardName.name;
+    li.querySelector('.gallery__heading').textContent = cardName.name;
     li.querySelector('.gallery__image').setAttribute('src', cardName.link);
+    li.querySelector('.gallery__delete').addEventListener('click', () => {
+        li.remove();
+    });
+    li.querySelector('.gallery__like').addEventListener('click',()=>li.querySelector('.gallery__like').classList.toggle('gallery__like_active'));//Выставление "лайков"
     return li;
-};
+}; // Создание 6 карточек из массива
 const liList = initialCards.map((cardName) => {
     const cardElement = createGallery(cardName);
     return cardElement;
@@ -39,27 +43,26 @@ const liList = initialCards.map((cardName) => {
 const renderGallery = (cardName) => {
     GalleryCards.prepend(createGallery(cardName));
 };
-GalleryCards.append(...liList);
+GalleryCards.append(...liList); 
 let FormAddCardElement = document.querySelector("form[name='form-new-place']");
 let placeInput = FormAddCardElement.querySelector('.popup__input_data_place');
 let linkInput = FormAddCardElement.querySelector('.popup__input_data_link');
 const submitFormHandler = (event) => {
     event.preventDefault();
     const cardName = {
-       name: placeInput.value,
-       link: linkInput.value
+        name: placeInput.value,
+        link: linkInput.value
     };
     renderGallery(cardName);
     togglePopupNewCardVisibility();
-};
-FormAddCardElement.addEventListener('submit', submitFormHandler);
-const galleryButtonDeleteList = document.querySelectorAll('.gallery__delete');
-galleryButtonDeleteList.forEach(function(galleryButtonDeleteElement){
-    galleryButtonDeleteElement.addEventListener('click', (event)=>{
-        let deletecard = event.target.closest('.gallery__card');
-        deletecard.remove();
-    });
-});
+}; // Функция по созданию новой карточки
+FormAddCardElement.addEventListener('submit', submitFormHandler);// Присвоение данной функции кнопке "Создать"
+FormAddCardElement.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+        renderGallery(cardName);
+        togglePopupNewCardVisibility();
+    }
+});// Создание новой карточки при нажатии кнопки Enter
 const popupList = document.querySelectorAll('.popup');
 const popupEditElement = document.querySelector('.popup_type_edit');
 const popupNewCardElement = document.querySelector('.popup_type_new-card');
@@ -67,32 +70,35 @@ const popupImageElement = document.querySelector('.popup_type_image');
 const popupCloseButtonList = document.querySelectorAll('.popup__button-close');
 const popupOpenButtonEditElement = document.querySelector('.profile__button-edit');
 const popupOpenButtonAddElement = document.querySelector('.profile__button-add');
-const galleryLikeLists = document.querySelectorAll('.gallery__like');
+
 const popupOpenButtonImageList = document.querySelectorAll('.gallery__image');
 const togglePopupEditVisibility = function () {
     popupEditElement.classList.toggle('popup_opened');
-};
+};// Функция по переключению окна по редактированию профиля
 const togglePopupNewCardVisibility = function () {
     popupNewCardElement.classList.toggle('popup_opened');
-};
+};// Функция по переключению окна по созданию новой карточки
 const addPopupImageVisibility = function () {
     popupImageElement.classList.toggle('popup_opened');
-};
+};// Функция по переключению окна с увеличением картинки 
+let popupLink = popupImageElement.querySelector('.popup__image');
 let popupCaption = popupImageElement.querySelector('.popup__caption');
-popupOpenButtonImageList.forEach(function (popupOpenButtonImageElement) {
-    popupOpenButtonImageElement.addEventListener('click', (event) => {
-        let placeHeading = event.target.closest('.gallery__card');
+popupOpenButtonImageList.forEach(function (cardName) {
+    cardName.addEventListener('click', (event) => {
+        let placeImage = event.target.closest('.gallery__card').querySelector('.gallery__image');
+        let placeHeading = event.target.closest('.gallery__card').querySelector('.gallery__heading');
         popupCaption.textContent = placeHeading.textContent;
+        popupLink.setAttribute('src', placeImage.src);
         addPopupImageVisibility();
     });
-});
+});// Функция, которая выполняет увеличению именно той картинки на которую нажимаешь и добавления такой надписи
 popupCloseButtonList.forEach(function (popupCloseButtonElement) {
     popupCloseButtonElement.addEventListener('click', () => {
         popupList.forEach(function (popup) {
             popup.classList.remove('popup_opened');
         });
     });
-});
+});// Функция которая задает, что все крестики закрывают окна popup
 popupOpenButtonAddElement.addEventListener('click', togglePopupNewCardVisibility);
 let formElement = document.querySelector("form[name='form-profile']");
 let nameInput = formElement.querySelector('.popup__input_data_name');
@@ -103,14 +109,14 @@ const addInputData = function () {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
     togglePopupEditVisibility();
-}
+};// Функция которая задает, что в окне редактирования профиля будут значения из текущего значения профиля
 popupOpenButtonEditElement.addEventListener('click', addInputData);
 function handleFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
     togglePopupEditVisibility();
-};
+};// Функция редактирования профиля 
 formElement.addEventListener('submit', handleFormSubmit);
 formElement.addEventListener("keyup", (event) => {
     if (event.key === "Enter") {
@@ -118,7 +124,4 @@ formElement.addEventListener("keyup", (event) => {
         profileName.textContent = nameInput.value;
         profileJob.textContent = jobInput.value;
     }
-});
-galleryLikeLists.forEach(function (galleryLikeElement) {
-    galleryLikeElement.addEventListener('click', () => galleryLikeElement.classList.toggle('gallery__like_active'));
-});
+});//Срабатывание и закрытие формы редактирования профиля при нажатии кнопки Enter
