@@ -25,19 +25,11 @@ const initialCards = [
     }
 ];
 const GalleryCards = document.querySelector('.gallery__cards');
+const template = document.querySelector('.template');
 const createGallery = (cardName) => {
-    const string = `<li class="gallery__card">
-    <button type="button" class="gallery__delete"></button>
-    <img class="gallery__image" src=${cardName.link}
-        alt="Изображение местности">
-    <div class="gallery__text">
-        <h2 class="gallery__heading">${cardName.name}</h2>
-        <button type="button" class="gallery__like"></button>
-    </div>
-</li>`;
-    const tempGalleryCard = document.createElement('div');
-    tempGalleryCard.insertAdjacentHTML('afterbegin', string);
-    const li = tempGalleryCard.firstElementChild;
+    const li = template.content.querySelector('.gallery__card').cloneNode(true);
+    li.querySelector('.gallery__heading').textContent=cardName.name;
+    li.querySelector('.gallery__image').setAttribute('src', cardName.link);
     return li;
 };
 const liList = initialCards.map((cardName) => {
@@ -61,6 +53,13 @@ const submitFormHandler = (event) => {
     togglePopupNewCardVisibility();
 };
 FormAddCardElement.addEventListener('submit', submitFormHandler);
+const galleryButtonDeleteList = document.querySelectorAll('.gallery__delete');
+galleryButtonDeleteList.forEach(function(galleryButtonDeleteElement){
+    galleryButtonDeleteElement.addEventListener('click', (event)=>{
+        let deletecard = event.target.closest('.gallery__card');
+        deletecard.remove();
+    });
+});
 const popupList = document.querySelectorAll('.popup');
 const popupEditElement = document.querySelector('.popup_type_edit');
 const popupNewCardElement = document.querySelector('.popup_type_new-card');
