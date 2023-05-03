@@ -13,7 +13,7 @@
     <header class="header">
         <img class="header__logo" src="./images/Vector.svg" alt="Логотип Место Россия">
     </header>
-    <main>
+    <main class="main">
         <section class="profile">
             <div class="profile__avatar">
                 <img class="profile__photo" src="./images/Avatar.png"
@@ -33,54 +33,6 @@
                         src="./images/Button-add.svg" alt="Иконка для добавления профиля"></button>
             </div>
         </section>
-        <div class="popup popup_type_edit">
-            <div class="popup__menu">
-                <button class="popup__button-close" type="button"
-                    aria-label="Инонка крестик для закрытия окна редактирования профиля"><img
-                        class="popup__button-close-icon" src="./images/Close-Icon.svg"
-                        alt="Инонка крестик для закрытия окна редактирования профиля"></button>
-                <div class="popup__container">
-                    <h2 class="popup__heading">Редактировать профиль</h2>
-                    <form class="popup__form" name="form-profile">
-                        <input class="popup__input popup__input_data_name" type="text" name="profile-name"
-                            value="Жак-Ив Кусто">
-                        <input class="popup__input popup__input_data_job" type="text" name="profile-job"
-                            value="Исследователь океана">
-                        <button class="popup__safe" type="submit">Сохранить</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="popup popup_type_new-card">
-            <div class="popup__menu">
-                <button class="popup__button-close" type="button"
-                    aria-label="Инонка крестик для закрытия окна добавления новой карточки"><img
-                        class="popup__button-close-icon" src="./images/Close-Icon.svg"
-                        alt="Инонка крестик для закрытия окна добавления новой карточки"></button>
-                <div class="popup__container">
-                    <h2 class="popup__heading">Новое место</h2>
-                    <form class="popup__form" name="form-new-place">
-                        <input class="popup__input popup__input_data_place" type="text" name="place-name"
-                            placeholder="Название">
-                        <input class="popup__input popup__input_data_link" type="url" name="place-link"
-                            placeholder="Ссылка на картинку">
-                        <button class="popup__safe" type="submit">Создать</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <div class="popup popup_type_image">
-            <div class="popup__menu-image">
-                <button class="popup__button-close" type="button"
-                    aria-label="Инонка крестик для закрытия окна добавления новой карточки"><img
-                        class="popup__button-close-icon" src="./images/Close-Icon.svg"
-                        alt="Инонка крестик для закрытия окна добавления новой карточки"></button>
-                <figure class="popup__figure">
-                    <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="popup__image" alt="Изображение местности">
-                    <figcaption class="popup__caption"></figcaption>
-                </figure>
-            </div>
-        </div>
         <section class="gallery" aria-label="Галерея картинок">
             <ul class="gallery__cards">
             </ul>
@@ -99,6 +51,55 @@
             </div>
         </li>
     </template>
+    <div class="popup popup_type_edit">
+        <div class="popup__menu">
+            <button class="popup__button-close" type="button"
+                aria-label="Инонка крестик для закрытия окна редактирования профиля"><img
+                    class="popup__button-close-icon" src="./images/Close-Icon.svg"
+                    alt="Инонка крестик для закрытия окна редактирования профиля"></button>
+            <div class="popup__container">
+                <h2 class="popup__heading">Редактировать профиль</h2>
+                <form class="popup__form" name="form-profile">
+                    <input class="popup__input popup__input_data_name" type="text" name="profile-name"
+                        value="Жак-Ив Кусто" required>
+                    <input class="popup__input popup__input_data_job" type="text" name="profile-job"
+                        value="Исследователь океана" required>
+                    <button class="popup__safe" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="popup popup_type_new-card">
+        <div class="popup__menu">
+            <button class="popup__button-close" type="button"
+                aria-label="Инонка крестик для закрытия окна добавления новой карточки"><img
+                    class="popup__button-close-icon" src="./images/Close-Icon.svg"
+                    alt="Инонка крестик для закрытия окна добавления новой карточки"></button>
+            <div class="popup__container">
+                <h2 class="popup__heading">Новое место</h2>
+                <form class="popup__form" name="form-new-place">
+                    <input class="popup__input popup__input_data_place" type="text" name="place-name"
+                        placeholder="Название" required>
+                    <input class="popup__input popup__input_data_link" type="url" name="place-link"
+                        placeholder="Ссылка на картинку" required>
+                    <button class="popup__safe" type="submit">Создать</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="popup popup_type_image">
+        <div class="popup__menu-image">
+            <button class="popup__button-close" type="button"
+                aria-label="Инонка крестик для закрытия окна добавления новой карточки"><img
+                    class="popup__button-close-icon" src="./images/Close-Icon.svg"
+                    alt="Инонка крестик для закрытия окна добавления новой карточки"></button>
+            <figure class="popup__figure">
+                <img src="./images/kirill-pershin-1088404-unsplash.jpg" class="popup__image" alt="Изображение местности">
+                <figcaption class="popup__caption"></figcaption>
+            </figure>
+        </div>
+    </div>
+    <script src="./scripts/data.js" defer></script>
     <script src="./scripts/index.js" defer></script>
 </body>
 
