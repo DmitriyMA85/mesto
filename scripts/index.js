@@ -27,9 +27,9 @@ const renderGallery = (cardName) => {
 };
 galleryCards.append(...liList);
 const formAddCardElement = document.querySelector("form[name='form-new-place']");
-let placeInput = formAddCardElement.querySelector('.popup__input_data_place');
-let linkInput = formAddCardElement.querySelector('.popup__input_data_link');
-const submitFormHandler = (event) => {
+const placeInput = formAddCardElement.querySelector('.popup__input_data_place');
+const linkInput = formAddCardElement.querySelector('.popup__input_data_link');
+const submitFormAddNewCardHandler = (event) => {
     event.preventDefault();
     const cardName = {
         name: placeInput.value,
@@ -70,18 +70,18 @@ popupCloseButtonList.forEach(function (popupCloseButtonElement) {
     });
 });// Функция которая задает, что все крестики закрывают окна popup
 popupOpenButtonAddElement.addEventListener('click', () => popupOpen(popupNewCardElement));
-let formElement = document.querySelector("form[name='form-profile']");
-let nameInput = formElement.querySelector('.popup__input_data_name');
-let jobInput = formElement.querySelector('.popup__input_data_job');
-let profileName = document.querySelector('.profile__name');
-let profileJob = document.querySelector('.profile__job');
+const formElement = document.querySelector("form[name='form-profile']");
+const nameInput = formElement.querySelector('.popup__input_data_name');
+const jobInput = formElement.querySelector('.popup__input_data_job');
+const profileName = document.querySelector('.profile__name');
+const profileJob = document.querySelector('.profile__job');
 const addInputData = function () {
     nameInput.value = profileName.textContent;
     jobInput.value = profileJob.textContent;
     popupOpen(popupEditElement);
 };// Функция которая задает, что в окне редактирования профиля будут значения из текущего значения профиля
 popupOpenButtonEditElement.addEventListener('click', addInputData);
-function handleFormSubmit(evt) {
+function handleFormEditProfileSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
